@@ -1,0 +1,36 @@
+# LWSD Bench configuration for Yahboom ROSMASTER M1
+# Adjust these values based on your specific setup.
+
+lwsd_monitor:
+  ros__parameters:
+    # ROSMASTER M1 publishes odometry on /odom
+    estimate_topic: /odom
+    reference_topic: /ground_truth/pose
+    input_type: odometry
+
+    # ROSMASTER M1 navigation runs at ~20 Hz
+    control_period: 0.05
+
+    # Alert threshold: start conservative, calibrate with data
+    alert_threshold: 0.5
+
+    # Rate estimation window (number of samples)
+    rate_window: 10
+
+    # Consecutive positive-rate cycles before sustained alert
+    sustained_rate_cycles: 3
+
+    # Position-only tracking (set > 0 for orientation, e.g. 0.1)
+    orientation_weight: 0.0
+
+    # CSV output
+    log_to_csv: true
+    csv_path: /tmp/lwsd_log.csv
+
+latency_injector:
+  ros__parameters:
+    input_topic: /odom
+    output_topic: /odom_delayed
+    input_type: odometry
+    # Set to 0 for baseline, 200 for mid-latency, 500 for VLM-edge
+    delay_ms: 0.0

@@ -1,0 +1,14 @@
+# Waypoints for LWSD experiment
+# Measure these with a tape measure along your test path.
+# All values in meters, relative to the starting position.
+# x = forward, y = lateral, z = vertical (usually 0)
+x,y,z
+0.0,0.0,0.0
+0.5,0.0,0.0
+1.0,0.0,0.0
+1.5,0.0,0.0
+2.0,0.0,0.0
+2.5,0.0,0.0
+3.0,0.0,0.0
+3.5,0.0,0.0
+4.0,0.0,0.0

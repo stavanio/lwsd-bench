@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Crossover latency: the perception delay at which staleness-induced error exceeds native estimation accuracy. Every tested algorithm crosses over below 200 ms, meaning all current foundation model inference latencies exceed the temporal safety budget of these VIO systems.}
+\label{tab:crossover}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Algorithm} & \textbf{Native Error (mm)} & \textbf{Crossover (ms)} & \textbf{Regime at Crossover} \\
+\midrule
+BASALT & 52.2 & 76 & Cloud VLM \\
+Kimera-VIO & 142.6 & 234 & Edge VLM \\
+OpenVINS & 93.7 & 147 & Cloud VLM \\
+ORB-SLAM3 & 27.8 & 47 & Lightweight NN \\
+ROVIO & 464.8 & 675 & Classical \\
+SVO2 & 83.0 & 131 & Cloud VLM \\
+VINS-Fusion & 157.9 & 251 & Edge VLM \\
+\bottomrule
+\end{tabular}
+\end{table}

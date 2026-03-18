@@ -1,0 +1,17 @@
+\begin{table}[t]
+\centering
+\caption{Stop-line overshoot under perception delay. The robot must stop when estimated distance to boundary falls below 0.5 m. Stale perception causes late stopping. ``No-stop'' indicates the fraction of trajectories where the stale estimate never triggered the stop before the trajectory ended.}
+\label{tab:stopline}
+\begin{tabular}{@{}lccccr@{}}
+\toprule
+\textbf{Latency} & \textbf{Example} & \textbf{Median OS} & \textbf{P95 OS} & \textbf{Max OS} & \textbf{No-Stop} \\
+\textbf{(ms)} & & \textbf{(mm)} & \textbf{(mm)} & \textbf{(mm)} & \textbf{(\%)} \\
+\midrule
+0 &  & 0 & 129 & 410 & 2 \\
+12 & Classical VIO & 10 & 129 & 410 & 2 \\
+50 & YOLO / MobileNet & 37 & 215 & 416 & 2 \\
+200 & OpenVLA (A100) & 94 & 402 & 434 & 2 \\
+500 & RT-2 / OpenVLA (edge) & 197 & 480 & 495 & 2 \\
+\bottomrule
+\end{tabular}
+\end{table}

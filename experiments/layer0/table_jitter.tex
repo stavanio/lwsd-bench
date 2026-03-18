@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Effect of latency variance on LWSD. Stochastic jitter increases worst-case LWSD substantially even when mean latency is unchanged, making hard real-time safety guarantees impossible without explicit monitoring.}
+\label{tab:jitter}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Condition} & \textbf{Mean LWSD} & \textbf{Mean Max} & \textbf{Worst Case} \\
+\midrule
+Fixed 200ms & 17.0 & 44.3 & 172.3 \\
+200ms + 30ms jitter & 17.3 & 66.5 & 225.4 \\
+200ms + 80ms jitter & 18.8 & 123.2 & 311.2 \\
+Fixed 500ms & 76.9 & 203.8 & 411.6 \\
+500ms + 50ms jitter & 77.9 & 274.0 & 469.6 \\
+500ms + 150ms jitter & 83.6 & 498.0 & 821.8 \\
+500ms + burst (300ms) & 100.7 & 1010.4 & 1661.2 \\
+\bottomrule
+\end{tabular}
+\end{table}
